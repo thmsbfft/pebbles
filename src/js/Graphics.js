@@ -157,13 +157,13 @@ Graphics.prototype.createPath = function(points, center) {
 	// }
 
 	// Use area center ?
-	var areaCenter = new paper.Shape.Circle(path.bounds.center, 0);
-	areaCenter.fillColor = 'pink';
-	this.ct++;
+	// var areaCenter = new paper.Shape.Circle(path.bounds.center, 0);
+	// areaCenter.fillColor = 'pink';
+	// this.ct++;
 
-	while(!path.intersects(areaCenter)) {
-		areaCenter.radius += 1;
-	}
+	// while(!path.intersects(areaCenter)) {
+	// 	areaCenter.radius += 1;
+	// }
 
 	// // Use center
 	// var dot = new paper.Shape.Circle(center, 0);
@@ -187,5 +187,12 @@ Graphics.prototype.removeSmallBits = function(path) {
 				segment.remove();
 			}
 		}
+
+}
+
+Graphics.prototype.export = function() {
+
+	console.log('Exporting...');
+	console.log(paper.project.exportSVG());
 
 }
